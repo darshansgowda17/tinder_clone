@@ -1,5 +1,7 @@
 import 'package:dating_app/widgets/textfield.dart';
 import 'package:flutter/material.dart';
+import 'package:dating_app/authenticationScreens/signup_screen.dart';
+import 'package:get/get.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
@@ -105,7 +107,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     InkWell(
                       onTap: ()
                       {
-
+                        Get.to(SignUpScreen());
                       },
                       child: Text(
                         "Register Now",
