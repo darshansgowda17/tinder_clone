@@ -11,6 +11,8 @@ class LoginScreen extends StatefulWidget {
 class _LoginScreenState extends State<LoginScreen> {
   TextEditingController emailTextEditingController = TextEditingController();
   TextEditingController passwordTextEditingController = TextEditingController();
+  bool showLoadingBar = false;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -62,6 +64,66 @@ class _LoginScreenState extends State<LoginScreen> {
                     isVisible: true,
                   ),
                 ),
+                const SizedBox(
+                  height: 25,
+                ),
+                Container(
+                  width: MediaQuery.sizeOf(context).width-20,
+                  height: 55,
+                  decoration: BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.all(Radius.circular(12)),
+                  ),
+                  child: InkWell(
+                    onTap: (){
+
+                    },
+                    child: Center(
+                      child: Text(
+                        "Login",
+                        style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          fontSize: 20,
+                          color: Colors.black,
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+                const SizedBox(
+                  height: 25,
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Text("Don't have an Account?   ",
+                      style: TextStyle(
+                        fontSize: 16,
+                        color: Colors.grey,
+                      ),
+                    ),
+                    InkWell(
+                      onTap: ()
+                      {
+
+                      },
+                      child: Text(
+                        "Register Now",
+                        style: TextStyle(
+                          fontSize: 19,
+                          color: Colors.white,
+                          fontWeight: FontWeight.bold,
+                        ),
+
+                      ),
+                    ),
+                  ],
+                ),
+                showLoadingBar == true?
+                    CircularProgressIndicator(
+                      valueColor: AlwaysStoppedAnimation(Colors.pink),
+                    ):
+                    Container(),
 
               ],
             ),
