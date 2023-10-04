@@ -1,3 +1,4 @@
+import 'package:dating_app/controllers/authentication_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:dating_app/widgets/textfield.dart';
 import 'package:get/get.dart';
@@ -30,6 +31,8 @@ class _SignUpScreenState extends State<SignUpScreen> {
   TextEditingController languageTextEditingController = TextEditingController();
   TextEditingController relegionTextEditingController = TextEditingController();
 
+  var authcontroller = AuthenticationController.authController;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -58,16 +61,34 @@ class _SignUpScreenState extends State<SignUpScreen> {
                 ),
               ),
               SizedBox(height: 12,),
+              authcontroller.profileImage == null ?
               GestureDetector(
-                onTap: (){
-
+                onTap: () async
+                {
+                  await authcontroller.pickImageFileFromGallery();
+                  setState(() {
+                    authcontroller.profileImage;
+                  });
                 },
                 child: CircleAvatar(
                   radius: 65,
                   backgroundImage: AssetImage("images/profile_avatar.jpg"),
                   backgroundColor: Colors.black,
                 ),
-              ),
+              ) :
+                  Container(
+                    width: 180,
+                    height: 180,
+                    decoration: BoxDecoration(
+                      shape: BoxShape.circle,
+                      color: Colors.pink,
+                      image: DecorationImage(
+                        fit: BoxFit.cover,
+                        image: FileImage(authcontroller.profileImage!),
+                      ),
+                    ),
+                  ),
+
               SizedBox(height: 10,),
               Text(
                 "Personal Details",
