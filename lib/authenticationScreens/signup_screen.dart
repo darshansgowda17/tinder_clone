@@ -338,6 +338,29 @@ class _SignUpScreenState extends State<SignUpScreen> {
                 ],
               ),
               SizedBox(height: 15,),
+              Container(
+                width: MediaQuery.sizeOf(context).width-20,
+                height: 55,
+                decoration: BoxDecoration(
+                  color: Colors.white,
+                  borderRadius: BorderRadius.all(Radius.circular(12)),
+                ),
+                child: InkWell(
+                  onTap: (){
+
+                  },
+                  child: Center(
+                    child: Text(
+                      "Register Now",
+                      style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        fontSize: 20,
+                        color: Colors.black,
+                      ),
+                    ),
+                  ),
+                ),
+              ),
             ],
           ),
         ),

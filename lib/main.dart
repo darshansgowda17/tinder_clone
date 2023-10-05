@@ -2,7 +2,6 @@ import 'package:dating_app/authenticationScreens/login_screen.dart';
 import 'package:dating_app/controllers/authentication_controller.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
-import 'authenticationScreens/login_screen.dart';
 import 'package:get/get.dart';
 
 void main() async
