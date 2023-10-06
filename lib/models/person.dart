@@ -69,9 +69,10 @@ class Person {
   {
   "imageProfile" = imageProfile;
   "name" = name;
-  "age" =
+  "age" = age;
+  ""
 
 
-}
+  }
 
 }
